@@ -1,0 +1,7 @@
+{
+  "name": "RestoKita",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">RestoKita</string>
+    <string name="title_activity_main">RestoKita</string>
+    <string name="package_name">com.restokita.app</string>
+    <string name="custom_url_scheme">com.restokita.app</string>
+</resources>
