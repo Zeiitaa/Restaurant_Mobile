@@ -76,7 +76,7 @@ const goBackToLogin = () => auth.logout()
 <style scoped>
 .auth-bg { min-height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 24px 0; }
 .brand-header { display: flex; flex-direction: column; align-items: center; margin-bottom: 32px; }
-.brand-icon { width: 56px; height: 56px; background: var(--ion-color-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; box-shadow: 0 8px 24px rgba(79,70,229,.25); }
+.brand-icon { width: 56px; height: 56px; background: var(--ion-color-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; box-shadow: 0 8px 24px rgba(61,156,245,.25); }
 .brand-title { font-size: 22px; font-weight: 700; margin: 0 0 4px; }
 .brand-subtitle { font-size: 13px; color: var(--ion-color-medium); margin: 0; }
 .card { background: #fff; border-radius: 20px; padding: 28px 24px; box-shadow: 0 4px 32px rgba(0,0,0,.08); }

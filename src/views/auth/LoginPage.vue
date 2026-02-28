@@ -133,7 +133,7 @@ async function handleLogin() {
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
-  box-shadow: 0 8px 24px rgba(79,70,229,.25);
+  box-shadow: 0 8px 24px rgba(61,156,245,.25);
 }
 
 .brand-title {

@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar>
         <ion-title>Admin Dashboard</ion-title>
         <ion-buttons slot="end">
           <ion-button @click="logout">
@@ -24,21 +24,21 @@
 
       <!-- Stats Cards -->
       <div class="stats-row ion-padding-horizontal">
-        <ion-card class="stat-card" color="primary">
+        <ion-card class="stat-card stat-card--blue">
           <ion-card-content>
-            <ion-icon name="cash" class="stat-icon" />
-            <p class="stat-label">Monthly Sales</p>
-            <div v-if="statsLoading" class="skeleton-text"></div>
+            <ion-icon name="cash" class="stat-icon stat-icon--blue" />
+            <p class="stat-label stat-label--blue">Monthly Sales</p>
+            <div v-if="statsLoading" class="skeleton-text skeleton-text--blue"></div>
             <p v-else class="stat-value">{{ formatIDR(monthlySales?.total_revenue) }}</p>
             <p class="stat-sub">{{ monthlySales?.total_orders ?? 0 }} orders</p>
           </ion-card-content>
         </ion-card>
 
-        <ion-card class="stat-card" color="success">
+        <ion-card class="stat-card stat-card--amber">
           <ion-card-content>
-            <ion-icon name="alert-circle" class="stat-icon" />
-            <p class="stat-label">Low Stock</p>
-            <p class="stat-value">{{ lowStockCount }}</p>
+            <ion-icon name="alert-circle" class="stat-icon stat-icon--amber" />
+            <p class="stat-label stat-label--amber">Low Stock</p>
+            <p class="stat-value stat-value--dark">{{ lowStockCount }}</p>
             <p class="stat-sub">items to restock</p>
           </ion-card-content>
         </ion-card>
@@ -163,15 +163,41 @@ const logout = async () => {
 .admin-subtitle { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--ion-color-primary); margin: 0; }
 .admin-title { font-size: 26px; font-weight: 900; margin: 4px 0 2px; color: var(--ion-color-dark); }
 .admin-date { font-size: 13px; color: var(--ion-color-medium); margin: 0; }
+
 .stats-row { display: flex; gap: 12px; margin-bottom: 4px; }
-.stat-card { flex: 1; border-radius: 16px; margin: 0; }
-.stat-icon { font-size: 28px; opacity: .8; }
-.stat-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,.7); margin: 4px 0 2px; }
-.stat-value { font-size: 20px; font-weight: 900; color: white; margin: 0; }
-.stat-sub { font-size: 11px; color: rgba(255,255,255,.65); margin: 2px 0 0; }
-.skeleton-text { height: 24px; width: 100px; background: rgba(255,255,255,.3); border-radius: 6px; }
+.stat-card {
+  flex: 1;
+  border-radius: 16px;
+  margin: 0;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.07);
+}
+.stat-card--blue { border-left: 4px solid var(--ion-color-primary); }
+.stat-card--amber { border-left: 4px solid #f59e0b; }
+
+.stat-icon { font-size: 24px; opacity: .85; }
+.stat-icon--blue { color: var(--ion-color-primary); }
+.stat-icon--amber { color: #d97706; }
+
+.stat-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; margin: 3px 0 2px; }
+.stat-label--blue { color: var(--ion-color-primary); }
+.stat-label--amber { color: #d97706; }
+
+.stat-value { font-size: 17px; font-weight: 900; color: var(--ion-color-dark); margin: 0; }
+.stat-value--dark { color: var(--ion-color-dark); }
+.stat-sub { font-size: 11px; color: var(--ion-color-medium); margin: 2px 0 0; }
+
+.skeleton-text { height: 20px; width: 80px; border-radius: 6px; }
+.skeleton-text--blue { background: rgba(61,156,245,.2); }
+
 .section-title { font-size: 15px; font-weight: 800; margin: 0 0 10px; color: var(--ion-color-dark); }
 .nav-list { border-radius: 14px; overflow: hidden; background: transparent; }
 .top-menus-card { border-radius: 14px; margin: 0; }
 .rank-badge { min-width: 28px; text-align: center; }
+
+@media (prefers-color-scheme: dark) {
+  .stat-card { background: #1e293b; }
+  .admin-title { color: #f1f5f9; }
+  .stat-value { color: #f1f5f9; }
+}
 </style>

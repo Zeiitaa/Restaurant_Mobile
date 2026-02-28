@@ -1,10 +1,10 @@
 :root {
-  --ion-color-primary: #4f46e5;
-  --ion-color-primary-rgb: 79,70,229;
+  --ion-color-primary: #3d9cf5;
+  --ion-color-primary-rgb: 61,156,245;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255,255,255;
-  --ion-color-primary-shade: #453eca;
-  --ion-color-primary-tint: #6158e8;
+  --ion-color-primary-shade: #2b8ceb;
+  --ion-color-primary-tint: #55a5f7;
 
   --ion-color-secondary: #f59e0b;
   --ion-color-secondary-rgb: 245,158,11;
@@ -65,6 +65,18 @@
   --ion-font-family: 'Inter', system-ui, -apple-system, sans-serif;
   --ion-background-color: #f8fafc;
   --ion-text-color: #1e293b;
+
+  /* Web-aligned custom tokens */
+  --rk-color-primary: #3d9cf5;
+  --rk-color-primary-hover: #2b8ceb;
+  --rk-color-primary-shadow: rgba(61,156,245,0.25);
+  --rk-bg-light: #f8fafc;
+  --rk-bg-dark: #0f172a;
+  --rk-surface-light: #ffffff;
+  --rk-surface-dark: #1e293b;
+  --rk-border-light: #e2e8f0;
+  --rk-border-dark: #334155;
+  --rk-text-muted: #64748b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -96,3 +108,34 @@
     --ion-card-background: #1e293b;
   }
 }
+/* ── Global styles aligned with web project ────────────────────────── */
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Action-card press animation (matches web) */
+.rk-action-card {
+  transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.18s;
+}
+.rk-action-card:active { transform: scale(0.96); }
+
+/* App-wide toolbar override — clean white header matching web navbar */
+ion-toolbar {
+  --background: #ffffff;
+  --color: #1e293b;
+  --border-color: #e2e8f0;
+  --border-width: 0 0 1px 0;
+}
+@media (prefers-color-scheme: dark) {
+  ion-toolbar {
+    --background: #0f1923;
+    --color: #f1f5f9;
+    --border-color: #1e293b;
+  }
+}
+
+/* Ion card – aligned radius with web */
+ion-card { --border-radius: 14px; }

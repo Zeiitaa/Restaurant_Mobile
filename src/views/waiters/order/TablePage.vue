@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar>
         <ion-buttons slot="start">
           <ion-back-button default-href="/waiters" />
         </ion-buttons>
@@ -91,7 +91,7 @@ const selectTable = (table: any) => {
   justify-content: center;
 }
 .table-card:active { transform: scale(0.96); }
-.table-card--available { background: #fff; border: 2px solid var(--ion-color-primary); box-shadow: 0 4px 16px rgba(79,70,229,.12); }
+.table-card--available { background: #fff; border: 2px solid var(--ion-color-primary); box-shadow: 0 4px 16px rgba(61,156,245,.15); }
 .table-card--booked { background: #f8fafc; border: 2px solid #e2e8f0; opacity: .6; cursor: not-allowed; }
 .table-code { font-size: 28px; font-weight: 800; color: var(--ion-color-primary); }
 .table-card--booked .table-code { color: #94a3b8; }

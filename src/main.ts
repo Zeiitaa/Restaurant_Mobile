@@ -26,6 +26,72 @@ import '@ionic/vue/css/palettes/dark.system.css'
 /* Theme variables */
 import './theme/variables.css'
 
+/* Ionicons — register all icons used across the app */
+import { addIcons } from 'ionicons'
+import {
+  restaurant, logOutOutline, addCircle, flame, wallet, person,
+  cash, alertCircle, grid, pricetag, people, receipt, barChart,
+  add, createOutline, addCircleOutline, trashOutline, restaurantOutline,
+  pricetagOutline, wine, iceCream, pizza, gridOutline, peopleOutline,
+  receiptOutline, barChartOutline, personOutline, lockClosedOutline,
+  eyeOffOutline, eyeOutline, arrowForward, mailOutline, arrowBack,
+  shieldCheckmarkOutline, callOutline, locationOutline, shieldCheckmark,
+  alertCircleOutline, checkmarkCircleOutline, checkmarkDone,
+  cart, searchOutline, close, remove,
+  checkmarkDoneCircle, checkmarkCircle, card, qrCode
+} from 'ionicons/icons'
+
+addIcons({
+  restaurant,
+  'log-out-outline': logOutOutline,
+  'add-circle': addCircle,
+  flame,
+  wallet,
+  person,
+  cash,
+  'alert-circle': alertCircle,
+  grid,
+  pricetag,
+  people,
+  receipt,
+  'bar-chart': barChart,
+  add,
+  'create-outline': createOutline,
+  'add-circle-outline': addCircleOutline,
+  'trash-outline': trashOutline,
+  'restaurant-outline': restaurantOutline,
+  'pricetag-outline': pricetagOutline,
+  wine,
+  'ice-cream': iceCream,
+  pizza,
+  'grid-outline': gridOutline,
+  'people-outline': peopleOutline,
+  'receipt-outline': receiptOutline,
+  'bar-chart-outline': barChartOutline,
+  'person-outline': personOutline,
+  'lock-closed-outline': lockClosedOutline,
+  'eye-off-outline': eyeOffOutline,
+  'eye-outline': eyeOutline,
+  'arrow-forward': arrowForward,
+  'mail-outline': mailOutline,
+  'arrow-back': arrowBack,
+  'shield-checkmark-outline': shieldCheckmarkOutline,
+  'call-outline': callOutline,
+  'location-outline': locationOutline,
+  'shield-checkmark': shieldCheckmark,
+  'alert-circle-outline': alertCircleOutline,
+  'checkmark-circle-outline': checkmarkCircleOutline,
+  'checkmark-done': checkmarkDone,
+  cart,
+  'search-outline': searchOutline,
+  close,
+  remove,
+  'checkmark-done-circle': checkmarkDoneCircle,
+  'checkmark-circle': checkmarkCircle,
+  card,
+  'qr-code': qrCode,
+})
+
 import App from './App.vue'
 import router from './router'
 

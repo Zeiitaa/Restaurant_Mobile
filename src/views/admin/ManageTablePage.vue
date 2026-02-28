@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar>
         <ion-buttons slot="start"><ion-back-button default-href="/admin" /></ion-buttons>
         <ion-title>Manage Tables</ion-title>
         <ion-buttons slot="end">

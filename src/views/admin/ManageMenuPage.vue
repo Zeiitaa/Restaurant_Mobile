@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar>
         <ion-buttons slot="start">
           <ion-back-button default-href="/admin" />
         </ion-buttons>
@@ -221,7 +221,7 @@ const submitForm = async () => {
   try {
     const headers = { Authorization: `Bearer ${auth.token}` }
     if (editTarget.value) {
-      await api.put(`/menu/${editTarget.value.id}`, form.value, { headers })
+      await api.patch(`/menu/${editTarget.value.id}`, form.value, { headers })
     } else {
       await api.post('/menu/', form.value, { headers })
     }
@@ -251,13 +251,14 @@ const confirmDelete = async (item: any) => {
 const isStockOpen = ref(false)
 const stockTarget = ref<any>(null)
 const stockQty = ref(0)
+const curretnDate = new Date().toISOString() 
 
 const openStockModal = (item: any) => { stockTarget.value = item; stockQty.value = 0; isStockOpen.value = true }
 const closeStock = () => { isStockOpen.value = false }
 const submitStock = async () => {
   if (!stockQty.value || !stockTarget.value) return
   try {
-    await api.patch(`/menu/${stockTarget.value.id}/stock`, { quantity: stockQty.value }, {
+    await api.post(`/upstock/`, { menu_id: stockTarget.value.id, stock_after: stockQty.value, users_id: auth.profile.id, date: curretnDate }, {
       headers: { Authorization: `Bearer ${auth.token}` }
     })
     closeStock(); await menuStore.fetchMenu()

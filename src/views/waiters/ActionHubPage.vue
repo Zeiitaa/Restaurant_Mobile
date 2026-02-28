@@ -1,15 +1,17 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar>
         <ion-title>
           <div class="toolbar-brand">
-            <ion-icon name="restaurant-menu" style="margin-right:6px" />
+            <div class="toolbar-logo">
+              <ion-icon name="restaurant" style="font-size:18px;color:#fff" />
+            </div>
             RestoKita
           </div>
         </ion-title>
         <ion-buttons slot="end">
-          <ion-button @click="handleSignOut">
+          <ion-button @click="handleSignOut" class="sign-out-btn">
             <ion-icon name="log-out-outline" slot="icon-only" />
           </ion-button>
         </ion-buttons>
@@ -120,7 +122,28 @@ const handleSignOut = async () => {
 </script>
 
 <style scoped>
-.toolbar-brand { display: flex; align-items: center; font-weight: 700; font-size: 18px; }
+.toolbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ion-color-dark);
+}
+.toolbar-logo {
+  width: 32px;
+  height: 32px;
+  background: var(--ion-color-primary);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(61,156,245,.3);
+}
+.sign-out-btn {
+  --color: #ef4444;
+}
 .hub-greeting { text-align: center; margin: 28px 0 24px; }
 .hub-title { font-size: 26px; font-weight: 800; margin: 0 0 6px; color: var(--ion-color-dark); }
 .hub-sub { font-size: 14px; color: var(--ion-color-medium); margin: 0; }
@@ -135,13 +158,16 @@ const handleSignOut = async () => {
   align-items: center;
   text-align: center;
   cursor: pointer;
-  transition: transform .15s, box-shadow .15s;
+  transition: transform .15s cubic-bezier(0.4,0,0.2,1), box-shadow .15s;
   min-height: 160px;
   justify-content: center;
   gap: 10px;
 }
 .action-card:active { transform: scale(0.97); }
-.action-card--primary { background: var(--ion-color-primary); box-shadow: 0 8px 24px rgba(79,70,229,.3); }
+.action-card--primary {
+  background: var(--ion-color-primary);
+  box-shadow: 0 8px 28px rgba(61,156,245,.35);
+}
 .action-card--light { background: #fff; border: 1.5px solid #e2e8f0; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
 
 .action-icon-wrap { width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; }
@@ -165,7 +191,12 @@ const handleSignOut = async () => {
 .staff-time { font-size: 15px; font-weight: 700; font-family: monospace; margin: 0; }
 
 @media (prefers-color-scheme: dark) {
+  .toolbar-brand { color: #f1f5f9; }
   .action-card--light { background: #1e293b; border-color: #334155; }
   .hub-title { color: #f1f5f9; }
+  .staff-card { --background: #1e293b; }
+  .staff-avatar { background: #334155; }
+  .staff-online-dot { border-color: #1e293b; }
+  .staff-divider { background: #334155; }
 }
 </style>

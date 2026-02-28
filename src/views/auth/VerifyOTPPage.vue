@@ -5,7 +5,7 @@
 
         <div class="brand-header">
           <div class="brand-icon">
-            <ion-icon name="restaurant-menu" style="font-size:26px;color:#fff" />
+            <ion-icon name="restaurant" style="font-size:26px;color:#fff" />
           </div>
           <h1 class="brand-title">RestoKita</h1>
           <p class="brand-subtitle">Forgot Password Recovery</p>

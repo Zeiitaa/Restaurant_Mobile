@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar>
         <ion-buttons slot="start"><ion-back-button default-href="/admin" /></ion-buttons>
         <ion-title>Stock History</ion-title>
       </ion-toolbar>
