@@ -92,6 +92,9 @@
             <ion-label position="stacked">Role</ion-label>
             <ion-select v-model="form.role">
               <ion-select-option value="waiters">Waiters</ion-select-option>
+              <ion-select-option value="customer">Customer</ion-select-option>
+              <ion-select-option value="manager">Manager</ion-select-option>
+              <ion-select-option value="employee">Employee</ion-select-option>
               <ion-select-option value="admin">Admin</ion-select-option>
             </ion-select>
           </ion-item>
@@ -165,9 +168,9 @@ const submitForm = async () => {
   try {
     if (editTarget.value) {
       const { password, ...data } = form.value
-      await api.put(`/user/${editTarget.value.id}`, data, { headers })
+      await api.patch(`/user/${editTarget.value.id}`, data, { headers })
     } else {
-      await api.post('/auth/register', form.value, { headers })
+      await api.post('/user/', form.value, { headers })
     }
     closeForm(); await loadStaff()
   } catch (e: any) { formError.value = e.response?.data?.detail ?? 'Error saving staff.' }

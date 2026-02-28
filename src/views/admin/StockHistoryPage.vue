@@ -22,14 +22,14 @@
           <ion-card-content>
             <div class="sc-row">
               <div class="sc-main">
-                <p class="sc-name">{{ item.menu_name }}</p>
+                <p class="sc-name">{{ item.menu.name }}</p>
                 <p class="sc-date">{{ formatDate(item.date) }}</p>
               </div>
               <div class="sc-right">
                 <p class="sc-qty" :class="item.quantity > 0 ? 'positive' : 'negative'">
-                  {{ item.quantity > 0 ? '+' : '' }}{{ item.quantity }}
+                  added by {{ item.staff.username }}
                 </p>
-                <p class="sc-after">After: {{ item.stock_after }}</p>
+                <p class="sc-after">Added: {{ item.stock_after }}</p>
               </div>
             </div>
             <p class="sc-notes" v-if="item.notes">{{ item.notes }}</p>
@@ -71,7 +71,7 @@ const formatDate = (d: string) =>
 const load = async () => {
   isLoading.value = true
   try {
-    const res = await api.get('/menu/stock-history', { headers: { Authorization: `Bearer ${auth.token}` } })
+    const res = await api.get('/upstock/', { headers: { Authorization: `Bearer ${auth.token}` } })
     stockHistory.value = res.data.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
   } catch (e) {
     console.error(e)
